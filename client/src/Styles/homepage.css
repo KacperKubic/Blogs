@@ -1,0 +1,69 @@
+.homepage{
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homepage .title h1{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 1000;
+}
+
+.homepage .title p{
+    color: rgb(99, 99, 99);
+    font-weight: bold;
+}
+
+.blogs{
+    margin-top: 50px;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.blogs .blog{
+    border-radius: 10px;
+    width: 500px;
+    height: 400px;
+    margin: 20px;
+    box-shadow: 0px 5px 30px rgba(0,0,0,0.15);
+    padding: 20px;
+    text-align: left;
+}
+
+.blogs .blog text{
+    color: rgb(241, 130, 40);
+    font-weight: bold;
+}
+
+.blogs .blog h2{
+    margin-top: 12px;
+    font-weight: bolder;
+}
+
+.blogs .blog .blogText{
+    margin-top: 12px;
+    color: rgb(99, 99, 99);
+
+}
+
+.blogs .blog button{
+    margin-top: 10px;
+    background-color: rgb(46, 187, 187);
+    width: 150px;
+    height: 40px;
+    padding: 4px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.blogs .blog button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
