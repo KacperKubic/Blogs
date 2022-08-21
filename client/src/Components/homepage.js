@@ -1,6 +1,17 @@
+import {useEffect, useState} from 'react';
+import Axios from 'axios';
+import Blog from './Blog';
 import '../Styles/homepage.css';
 
+
 const Homepage = () => {
+
+    const [blogList, setBlogList] = useState([]);
+    useEffect(() =>{
+        Axios.get('http://localhost:3001/api/get').then((response) =>{
+            setBlogList(response.data);
+        })
+    })
     return ( 
         <div className='homepage'>
             <div className='title'>
@@ -8,30 +19,9 @@ const Homepage = () => {
                 <p>A place where you can create your own blog and read blogs about various topics!</p>
             </div>
             <div className='blogs'>
-                <div className='blog'>
-                    <p className='blogInfo'> Written by: <text>Kacper</text> Category: <text>Tech</text></p>
-                    <h2>First blog</h2>
-                    <p className='blogText'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ipsam explicabo officia quas tenetur veniam id? Odit veritatis quo culpa ullam beatae quas, sequi exercitationem eos molestias, consequatur rem sapiente. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ipsam explicabo officia quas tenetur veniam id? Odit veritatis quo culpa ullam beatae quas, sequi exercitationem eos molestias, consequatur rem sapiente.</p>
-                    <button>Read more</button>
-                </div>
-                <div className='blog'>
-                    <p className='blogInfo'> Written by: <text>Kacper</text> Category: <text>Tech</text></p>
-                    <h2>First blog</h2>
-                    <p className='blogText'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ipsam explicabo officia quas tenetur veniam id? Odit veritatis quo culpa ullam beatae quas, sequi exercitationem eos molestias, consequatur rem sapiente.</p>
-                    <button>Read more</button>
-                </div>
-                <div className='blog'>
-                    <p className='blogInfo'> Written by: <text>Kacper</text> Category: <text>Tech</text></p>
-                    <h2>First blog</h2>
-                    <p className='blogText'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ipsam explicabo officia quas tenetur veniam id? Odit veritatis quo culpa ullam beatae quas, sequi exercitationem eos molestias, consequatur rem sapiente.</p>
-                    <button>Read more</button>
-                </div>
-                <div className='blog'>
-                    <p className='blogInfo'> Written by: <text>Kacper</text> Category: <text>Tech</text></p>
-                    <h2>First blog</h2>
-                    <p className='blogText'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ipsam explicabo officia quas tenetur veniam id? Odit veritatis quo culpa ullam beatae quas, sequi exercitationem eos molestias, consequatur rem sapiente.</p>
-                    <button>Read more</button>
-                </div>
+            {blogList.map((blog, key) =>{
+                return <Blog key={key} blogAuthor={blog.blogAuthor} blogTitle={blog.blogTitle} blogText={blog.blogText}/>
+            })}
             </div>
         </div>
      );
