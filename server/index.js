@@ -24,9 +24,14 @@ app.get("/api/get", (req, res) =>{
 app.post('/api/post', (req, res)=>{
     const blogAuthor = req.body.blogAuthor
     const blogTitle = req.body.blogTitle
-    const blogText = req.body.blogText
-
+    const blogDescription = req.body.blogDescription
+    const blogContent = req.body.blogContent
+    const blogCategory = req.body.blogCategory
     
+    const sqlInsert = "INSERT INTO blogs.blogs (blogAuthor, blogDescription, blogTitle, blogContent, blogCategory) VALUES (?,?,?,?,?);"
+    db.query(sqlInsert, [blogAuthor, blogDescription, blogTitle, blogContent, blogCategory], (err, result) => {
+        console.log(err);
+    })
 })
 
 app.listen(3001, () => {

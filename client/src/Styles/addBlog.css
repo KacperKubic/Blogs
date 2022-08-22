@@ -1,12 +1,60 @@
 .addBlog{
     height: 100%;
-    min-height: 100vh;
     width: 700px;
     margin: 0 auto;
     text-align: center;
 }
 
 .addBlog h2{
-    font-size: 20px;
+    font-size: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
+}
+
+.addBlog label{
+    text-align: left;
+    display: block;
+}
+
+.addBlog input, .addBlog textarea{
+    width: 100%;
+    padding: 6px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+}
+
+.addBlog textarea{
+    height: 400px;
+    resize: none;
+}
+
+.addBlog button{
+    background: #2eb2bb;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    float: left;
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.addBlog p{
+    float: left;
+    font-size: 20px;
+    margin: 10px
+}
+
+.addBlog a{
+    text-decoration: none;
+    color: #8e20af;
+}
+
+.addBlog a:hover{
+    text-decoration: underline;
 }

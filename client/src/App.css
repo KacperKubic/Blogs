@@ -8,4 +8,5 @@
 .App {
   text-align: center;
   background-color: ghostwhite;
+  min-height: 100vh;
 }

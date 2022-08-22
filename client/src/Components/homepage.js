@@ -1,8 +1,7 @@
 import {useEffect, useState} from 'react';
 import Axios from 'axios';
-import Blog from './Blog';
+import BlogPreview from './BlogPreview';
 import '../Styles/homepage.css';
-
 
 const Homepage = () => {
 
@@ -20,7 +19,7 @@ const Homepage = () => {
             </div>
             <div className='blogs'>
             {blogList.map((blog, key) =>{
-                return <Blog key={key} blogAuthor={blog.blogAuthor} blogTitle={blog.blogTitle} blogText={blog.blogText}/>
+                return <BlogPreview key={key} blogAuthor={blog.blogAuthor} blogTitle={blog.blogTitle} blogDescription={blog.blogDescription} blogCategory={blog.blogCategory}/>
             })}
             </div>
         </div>
