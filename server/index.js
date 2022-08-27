@@ -14,11 +14,35 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/api/get", (req, res) =>{
+app.get('/api/get', (req, res) =>{
     const sqlSelect = "SELECT * FROM blogs.blogs";
     db.query(sqlSelect, (error, result) => {
         res.send(result);
     });
+});
+
+app.get('/api/blogDetails/:id', (req, res) =>{
+    const id = req.params.id;
+    const sqlSelect = "SELECT * FROM blogs.blogs WHERE id=?";
+    db.query(sqlSelect, [id], (error, result) => {
+        res.json(result)
+    })
+});
+
+app.get('/api/getByCategory/:blogCategory', (req, res) =>{
+    const blogCategory = req.params.blogCategory;
+    console.log(blogCategory)
+    if(blogCategory == "*"){
+        const sqlSelect = "SELECT * FROM blogs.blogs";
+        db.query(sqlSelect, (error, result) => {
+            res.send(result);
+        }) 
+    }else{
+        const sqlSelect = "SELECT * FROM blogs.blogs WHERE blogCategory=?";
+        db.query(sqlSelect, [blogCategory], (error, result) =>{
+        res.send(result);
+    })
+    }
 });
 
 app.post('/api/post', (req, res)=>{
@@ -32,8 +56,8 @@ app.post('/api/post', (req, res)=>{
     db.query(sqlInsert, [blogAuthor, blogDescription, blogTitle, blogContent, blogCategory], (err, result) => {
         console.log(err);
     })
-})
+});
 
 app.listen(3001, () => {
     console.log("working");
-})
+});
