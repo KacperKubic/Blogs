@@ -4,11 +4,11 @@
     color: black;
     justify-content: center;
     display: flex;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .blogDetails .blog h1{
-    font-size: 3rem;
+    font-size: 3.1rem;
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -19,8 +19,17 @@
 }
 
 .blogDetails .blog div{
-    width: 1200px;
-    margin: 20px 0;
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
     font-size: 1.2rem;
     text-align: left;
+    position: relative;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 360px){
+    .blogDetails .blog  h1{
+        font-size: 2rem;
+    }
 }

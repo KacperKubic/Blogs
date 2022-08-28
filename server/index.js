@@ -32,7 +32,7 @@ app.get('/api/blogDetails/:id', (req, res) =>{
 app.get('/api/getByCategory/:blogCategory', (req, res) =>{
     const blogCategory = req.params.blogCategory;
     console.log(blogCategory)
-    if(blogCategory == "*"){
+    if(blogCategory === "*"){
         const sqlSelect = "SELECT * FROM blogs.blogs";
         db.query(sqlSelect, (error, result) => {
             res.send(result);

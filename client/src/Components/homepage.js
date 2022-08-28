@@ -22,8 +22,8 @@ const Homepage = () => {
     return ( 
         <div className='homepage'>
             <div className='title'>
-                <h1>Welcome to MyBlogs.com</h1>
-                <p>A place where you can create your own blog and read blogs about various topics!</p>
+                <h1>Welcome to MyBlogs</h1>
+                <p>A place where you can create your own blog and read blogs written by other users!</p>
             </div>
             <div className='categories'>
                 <select name='categories' onChange={(e)=>handleCategoryChange(e.target.value)}>

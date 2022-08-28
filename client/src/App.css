@@ -5,6 +5,10 @@
   font-family: "Quicksand";
 }
 
+body{
+  background-color: ghostwhite;
+}
+
 .App {
   text-align: center;
   background-color: ghostwhite;

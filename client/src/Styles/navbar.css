@@ -24,3 +24,11 @@
 .navbar .links a:hover{
     color: #2eb2bb;
 }
+
+@media screen and (max-width: 320px){
+    .navbar .links{
+        font-size: 1.10rem;
+    }
+
+
+}
