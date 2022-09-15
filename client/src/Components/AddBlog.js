@@ -5,6 +5,7 @@ import '../Styles/addBlog.css';
 
 const AddBlog = () => {
 
+    //States
     const [blogAuthor, setAuthor] = useState('');
     const [blogTitle, setTitle] = useState('');
     const [blogDescription, setDescription] = useState('');
@@ -13,8 +14,9 @@ const AddBlog = () => {
     const [success, setSuccess] = useState(false);
     const [empty, setEmpty] = useState(false);
 
-    console.log(blogCategory)
-
+    /*Function that runs on submit of the form.
+    If any of the form inputs is empty it will setEmpty to true.
+    Else it will send a post request to the server with all the information from the form*/
     const handleSumbit = () =>{
         if(blogAuthor === '' || blogTitle === '' || blogDescription === '' || blogContent === ''){
             setEmpty(true);
@@ -71,10 +73,14 @@ const AddBlog = () => {
                     </select>
                     <br/><br/>
                 </form>
+                
+                {/*If the success variable is equal to false the AddBlog button is active. 
+                Else display a success massage and disable the button*/}
                 {!success && <button onClick={handleSumbit}>Add Blog</button>}
-                {empty && <p>Please fill all of the inputs</p>}
                 {success && <button disabled>Add Blog</button>}
                 {success && <p>Blog successfully added! <Link to='/'>Back to homepage</Link></p>}
+
+                {empty && <p>Please fill all of the inputs</p>}
             </div>
         </div>
      );
